@@ -6,7 +6,8 @@ import os
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 ### Descargar dataset de kaggle mediante la API
-
+os.environ['KAGGLE_USERNAME'] = "xxxxxxxoc"
+os.environ['KAGGLE_KEY'] = "xxxxxxxxxxxxxxxxe8"
 api = KaggleApi()
 api.authenticate()
 api.dataset_download_files('nushkaa/telecom-customer-churn', path="src/database")
