@@ -53,7 +53,12 @@ def preprocessing_data():
     X_test_df.describe()
 
     return X_train, X_test, y_train, y_test
-
+def save_data():
+    X_train, X_test, y_train, y_test = preprocessing_data()
+    X_train.tofile('X_train.csv', sep = ';')
+    y_train.tofile('y_train.csv', sep = ';')
+    X_test.tofile('X_test.csv', sep = ';')
+    y_test.tofile('y_test.csv', sep = ';')
 
 if __name__ == '__main__':
     preprocessing_data()
