@@ -111,4 +111,9 @@ def run_experiments():
     load_if_exists = True
     )
     study.optimize(func=objective, n_trials=50, n_jobs=1)
+    best_params = study.best_params
+    best_paramsscore = study.best_value
+    return best_params, best_score
 
+if __name__ == '__main__'
+    run_experiments()
