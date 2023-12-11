@@ -115,5 +115,5 @@ def run_experiments():
     best_paramsscore = study.best_value
     return best_params, best_score
 
-if __name__ == '__main__'
+if __name__ == '__main__':
     run_experiments()
