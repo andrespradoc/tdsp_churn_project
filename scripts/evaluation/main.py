@@ -8,7 +8,9 @@ mlflow models serve -m 'models:/{model_name}/Production' -p {port} --env-manager
 
 """
 
-import request
+import requests
+import time 
+
 data = [[3.601381662065445,
   -0.584935532922293,
   -1.5476529221334174,
@@ -33,10 +35,15 @@ data = [[3.601381662065445,
   0.4998636849042407,
   -0.35370363388816944,
   -0.1843703458003117]]
+
 def get_labels_predicts(data: list):
     try: 
+        init = time.time()
         r = requests.post("http://localhost:8124/invocations", json={"inputs": data})
-        return(r.text) ## por ejemplo retorna {"predictions": [0, 1]}
+        final = time.time()
+        print(r.text, f'Tiempo de respuesta: {final-init}') ## por ejemplo retorna {"predictions": [0, 1]}  Tiempo de respuesta: 0.155    
+    except Exception as ex:
+        print(ex)
 
 if __name__ == '__main__':
     predicts = get_labels_predicts(data)
