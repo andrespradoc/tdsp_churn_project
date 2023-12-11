@@ -23,23 +23,23 @@ Este informe describe los resultados del proyecto de machine learning y presenta
 
 #### Evaluación metricas del modelo
 
-    Se utiliza todo el dataset para que el modelo final prediga la variable objetivo encontrando que de 483 registros de la clase positiva 32 se clasificaron mal mientras que de la clase negativa solo se clasificaron 2 erroneamente.
-    El F1 Score aumenta significativamente sin embargo puede deberse a un sobreajsute en el modelo con los datos de entrenamiento y tambien al significativo desbalance de los datos (Metrica que demuestra el recall obtenido con los datos del set de pruebas explicado en docs/modeling)
-    
-    - Resultados sobre todo el dataset:
-    ![Alt text](image-2.png)
+Se utiliza todo el dataset para que el modelo final prediga la variable objetivo encontrando que de 483 registros de la clase positiva 32 se clasificaron mal mientras que de la clase negativa solo se clasificaron 2 erroneamente.
+El F1 Score aumenta significativamente sin embargo puede deberse a un sobreajsute en el modelo con los datos de entrenamiento y tambien al significativo desbalance de los datos (Metrica que demuestra el recall obtenido con los datos del set de pruebas explicado en docs/modeling)
 
-    - Resultados sobre el dataset de pruebas:
-    ![Alt text](image-3.png)
+- Resultados sobre todo el dataset:
+![Alt text](image-2.png)
+
+- Resultados sobre el dataset de pruebas:
+![Alt text](image-3.png)
     
 #### Evaluación de desempeño API
-    Se evalua que el modelo una vez puesto en producción, pueda ser consumido mediante un API REST de un equipo cliente. Se prueba haciendo una petición POST con 1000 clientes (cada uno con un vector de 12 caracteristicas) El tiempo de respuesta del API corriendo en una maquina de google colab fue de 0.125 segundos accediendo localmente (Dentro de la misma red)
-    ![Alt text](image.png) 
+Se evalua que el modelo una vez puesto en producción, pueda ser consumido mediante un API REST de un equipo cliente. Se prueba haciendo una petición POST con 1000 clientes (cada uno con un vector de 12 caracteristicas) El tiempo de respuesta del API corriendo en una maquina de google colab fue de 0.125 segundos accediendo localmente (Dentro de la misma red)
+![Alt text](image.png) 
 
-    Por otra parte se obtuvo una metrica de 2.157 segundos al acceder a MLFLow en la maquina de colab mediante NGROK desde un equipo personal conectado a internet.
+Por otra parte se obtuvo una metrica de 2.157 segundos al acceder a MLFLow en la maquina de colab mediante NGROK desde un equipo personal conectado a internet.
 
-    ![Alt text](image-1.png)
-    Aunque lo anterior fue una prueba de concepto (No se realizó el despliegue sobre maquinas propiamente destinadas para las tareas descritas) los tiempos de respuesta son aceptables para la tarea descrita en /docs/deployment/ que realizará el ERP-CRM.
+![Alt text](image-1.png)
+Aunque lo anterior fue una prueba de concepto (No se realizó el despliegue sobre maquinas propiamente destinadas para las tareas descritas) los tiempos de respuesta son aceptables para la tarea descrita en /docs/deployment/ que realizará el ERP-CRM.
 
 
 
